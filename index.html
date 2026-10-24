@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Неон-ран</title>
+  <meta name="description" content="Бесконечный раннер в неоновом городе. Прыгай, собирай кристаллы, бей рекорды.">
+  <meta name="theme-color" content="#0b0418">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game" aria-label="Игровое поле"></canvas>
+
+  <div class="hud" id="hud" hidden>
+    <span id="score">0</span>
+    <span class="hud__gems">◆ <b id="gems">0</b></span>
+    <button class="hud__btn" id="pauseBtn" aria-label="Пауза">❚❚</button>
+  </div>
+
+  <div class="screen" id="menu">
+    <h1 class="title">НЕОН<span>РАН</span></h1>
+    <p class="best">Рекорд: <b id="best">0</b></p>
+    <button class="play" id="playBtn">Играть</button>
+    <p class="hint"><b>Тап</b> или <b>пробел</b> — прыжок · в воздухе можно прыгнуть ещё раз</p>
+    <button class="link" id="soundBtn">Звук: вкл</button>
+  </div>
+
+  <div class="screen" id="over" hidden>
+    <h2 class="title title--sm">КОНЕЦ<span>ЗАБЕГА</span></h2>
+    <div class="result">
+      <div><small>Очки</small><b id="finalScore">0</b></div>
+      <div><small>Кристаллы</small><b id="finalGems">0</b></div>
+    </div>
+    <p class="best" id="newBest" hidden>🏆 Новый рекорд!</p>
+    <button class="play" id="againBtn">Ещё раз</button>
+    <button class="link" id="menuBtn">В меню</button>
+  </div>
+
+  <div class="screen screen--dim" id="paused" hidden>
+    <h2 class="title title--sm">ПАУЗА</h2>
+    <button class="play" id="resumeBtn">Продолжить</button>
+  </div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
